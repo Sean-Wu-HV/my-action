@@ -12,5 +12,6 @@
 FROM blackducksoftware/detect:8
 
 COPY entrypoint.sh /entrypoint.sh
+COPY LICENSE LICENSE
 
 ENTRYPOINT ["/entrypoint.sh"]
