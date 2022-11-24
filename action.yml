@@ -6,6 +6,11 @@ inputs:
     description: 'Who to greet'
     required: true
     default: 'World'
+  classroom:
+    description: 'where is the classroom?'
+    required: true
+    default: 'YKA-342'
+    type: string
 outputs:
   time: # id of output
     description: 'The time we greeted you'
@@ -14,3 +19,4 @@ runs:
   image: 'Dockerfile'
   args:
     - ${{ inputs.who-to-greet }}
+    - ${{ inputs.classroom }}
