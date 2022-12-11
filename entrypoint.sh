@@ -10,7 +10,7 @@ echo "time=$time" >> $GITHUB_OUTPUT
 
 curl -O https://detect.synopsys.com/detect8.sh
 
-chmod u+h detect8.sh
+chmod u+x detect8.sh
 ./detect8.sh -h
 
 echo "$(ls -la)"
