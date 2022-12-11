@@ -1,17 +1,20 @@
-# # Container image that runs your code
-# FROM alpine:3.10
+FROM docker:dind
 
-# # Copies your code file from your action repository to the filesystem path `/` of the container
-# COPY entrypoint.sh /entrypoint.sh
+# Update, get bash
+RUN apk update && apk add bash && apk add curl
 
-# # Code file to execute when the docker container starts up (`entrypoint.sh`)
-# ENTRYPOINT ["/entrypoint.sh"]
+# Required for standalone nuget inspector
+RUN apk add libstdc++ && apk add gcompat && apk add icu
 
+# Java
+RUN apk --no-cache add openjdk11-jre
 
+ENV BDS_JAVA_HOME=/usr/lib/jvm/java-11-openjdk
 
-FROM blackducksoftware/detect:8
+# Download Detect jar
 
-COPY entrypoint.sh /entrypoint.sh
-COPY LICENSE LICENSE
+RUN curl -O https://detect.synopsys.com/detect.sh
+RUN chmod u+x detect.sh
 
-ENTRYPOINT ["/entrypoint.sh"]
+# Define Docker Image entrypoint
+ENTRYPOINT ["./detect.sh"]
