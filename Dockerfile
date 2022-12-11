@@ -17,4 +17,4 @@ RUN curl -O https://detect.synopsys.com/detect.sh
 RUN chmod u+x detect.sh
 
 # Define Docker Image entrypoint
-ENTRYPOINT ["./detect.sh"]
+ENTRYPOINT ["/./detect.sh"]
