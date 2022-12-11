@@ -1,5 +1,8 @@
 #!/bin/sh -l
 
+# fail script if error
+set -eo pipefail
+
 echo "parsing inputs"
 
 
@@ -15,3 +18,5 @@ echo "whoami $(whoami)"
 
 echo "$(java --version)"
 echo "$(docker ps)"
+
+/./detect.sh $@
