@@ -16,6 +16,11 @@ inputs:
     required: false
     default: '-h'
     type: string
+  test-option:
+    description: 'test options'
+    required: false
+    default: '--test mytest'
+    type: string
 outputs:
   time: # id of output
     description: 'The time we greeted you'
@@ -24,3 +29,4 @@ runs:
   image: 'Dockerfile'
   args:
     - ${{ inputs.help-option }}
+    - ${{ inputs.test-option }}
