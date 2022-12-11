@@ -13,5 +13,5 @@ echo "$(ls -la /)"
 echo "$(pwd)"
 echo "$(whoami)"
 
-echo "(java --version)"
-echo "docker ps"
+echo "$(java --version)"
+echo "$(docker ps)"
