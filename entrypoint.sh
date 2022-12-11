@@ -9,6 +9,9 @@ time=$(date)
 echo "time=$time" >> $GITHUB_OUTPUT
 
 echo "$(ls -la)"
+echo "$(ls -la /)"
+echo "$(pwd)"
+echo "$(whoami)"
 
 echo "(java --version)"
 echo "docker ps"
