@@ -19,4 +19,5 @@ echo "whoami $(whoami)"
 echo "$(java --version)"
 echo "$(docker ps)"
 
-/./detect.sh $@
+echo $@
+# /./detect.sh $@
