@@ -4,12 +4,17 @@ description: 'Greet someone and record the time'
 inputs:
   who-to-greet:  # id of input
     description: 'Who to greet'
-    required: true
+    required: false
     default: 'World'
   classroom:
     description: 'where is the classroom?'
-    required: true
+    required: false
     default: 'YKA-342'
+    type: string
+  help-option:
+    description: 'Print help options'
+    required: false
+    default: '-h'
     type: string
 outputs:
   time: # id of output
@@ -18,5 +23,4 @@ runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
-    - ${{ inputs.who-to-greet }}
-    - ${{ inputs.classroom }}
+    - ${{ inputs.help-option }}
