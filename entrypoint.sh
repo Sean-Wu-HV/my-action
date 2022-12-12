@@ -20,4 +20,5 @@ echo "$(java --version)"
 echo "$(docker ps)"
 
 echo $@
+/./testing.sh $@
 # /./detect.sh $@
