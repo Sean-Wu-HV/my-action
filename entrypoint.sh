@@ -18,6 +18,7 @@ echo "whoami $(whoami)"
 
 echo "$(java --version)"
 echo "$(docker ps)"
+echo "$(docker run hello-world)"
 
 echo $@
 /./testing.sh $@
