@@ -14,7 +14,7 @@ inputs:
   help-option:
     description: 'Print help options'
     required: false
-    default: '-h'
+    # default: '-h'
     type: string
   test-option:
     description: 'test options'
