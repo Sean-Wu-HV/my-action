@@ -3,6 +3,8 @@
 pip3 install poetry
 python3 -m poetry config --list
 
-# python3 -m poetry version -s $1
+python3 -m poetry version -s $1
 
-# echo $(poetry version)
+echo $(poetry version)
+
+poetry build
