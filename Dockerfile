@@ -1,4 +1,4 @@
-FROM 3.12-rc-slim-buster:latest
+FROM python:3.12-rc-slim-buster
 
 # Update, get bash
 RUN apk update && apk add bash && apk add curl
