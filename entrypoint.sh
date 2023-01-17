@@ -1,3 +1,3 @@
 #!/bin/sh -l
 
-poetry config --list
+python3 -m poetry config --list
