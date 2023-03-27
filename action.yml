@@ -21,6 +21,12 @@ inputs:
     required: false
     default: '--test mytest'
     type: string
+  testArray:
+    description: 'test options'
+    required: false
+    default: ['abc', 'def']
+    type: array
+    
 outputs:
   time: # id of output
     description: 'The time we greeted you'
