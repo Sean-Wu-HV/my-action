@@ -1,38 +1,19 @@
-# action.yml
-name: 'Hello World'
-description: 'Greet someone and record the time'
+name:  "Helm deployment GitHub Action"
+description: "Helm deployment GitHub Action"
 inputs:
-  who-to-greet:  # id of input
-    description: 'Who to greet'
-    required: false
-    default: 'World'
-  classroom:
-    description: 'where is the classroom?'
-    required: false
-    default: 'YKA-342'
-    type: string
-  help-option:
-    description: 'Print help options'
-    required: false
-    # default: '-h'
-    type: string
-  test-option:
-    description: 'test options'
-    required: false
-    default: '--test mytest'
-    type: string
-  testArray:
-    description: 'test options'
-    required: false
-    default: ['abc', 'def']
-    type: array
-    
-outputs:
-  time: # id of output
-    description: 'The time we greeted you'
+
+  CRD_NAME:
+    description: "Custom resource Definition Name"
+    required: true
+    defualt: ['abe','def']
+
 runs:
-  using: 'docker'
-  image: 'Dockerfile'
-  args:
-    - ${{ inputs.help-option }}
-    - ${{ inputs.test-option }}
+  using: "composite"
+  steps:    
+        
+      - name: Test on arrays
+        run: |
+          for i in "${CRD_NAME[@]}"
+          do
+            echo $i
+          done
